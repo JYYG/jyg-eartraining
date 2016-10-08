@@ -1,0 +1,73 @@
+//
+//
+//  KEYBOARD STYLES
+//  author : JYG
+//
+//
+
+.KeyboardPage > section{
+    height: 100%;
+    overflow-y: auto;
+    overflow-scrolling:touch;
+    -webkit-overflow-scrolling:touch;
+}
+
+.KeyboardPage .keyboard{
+    float: left;
+    display: table;
+}
+
+.KeyboardPage .keyboard button{
+/*    float: left;*/
+    z-index: 0;
+    display: table-cell;
+    margin: 0;
+    padding-left: 10px;
+    position: relative;
+    text-align: left;
+    font-size: 12px;
+    width: 250px;
+    height: 50px;
+    border-radius: 0;
+    border: 1px solid black;
+    vertical-align: top;
+    perspective: 1000px;
+    perspective-origin: right;
+    -webkit-perspective: 1000px;
+    -webkit-perspective-origin: right;
+    background-color: white;
+}
+
+.KeyboardPage .keyboard button:hover,
+.KeyboardPage .keyboard button:active{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f9ff+0,e5e5e5+100&0+0,1+100 */
+    background: -moz-linear-gradient(left,  rgba(240,249,255,0) 0%, rgba(229,229,229,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(240,249,255,0) 0%,rgba(229,229,229,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(240,249,255,0) 0%,rgba(229,229,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f0f9ff', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
+    transform: rotate3d(0,.3,0,-20deg);
+    -webkit-transform: rotate3d(0,.3,0,-20deg);
+    background-color: white;
+}
+
+
+.KeyboardPage .keyboard button:nth-child(2),
+.KeyboardPage .keyboard button:nth-child(4),
+.KeyboardPage .keyboard button:nth-child(7),
+.KeyboardPage .keyboard button:nth-child(9),
+.KeyboardPage .keyboard button:nth-child(11){
+    z-index: 1;
+    margin: -12.5px 0 0 100px;
+    width: 150px;
+    height: 25px;
+    background-color: black;
+    color: white;
+}
+
+.KeyboardPage .keyboard button:nth-child(2) + button,
+.KeyboardPage .keyboard button:nth-child(4) + button,
+.KeyboardPage .keyboard button:nth-child(7) + button,
+.KeyboardPage .keyboard button:nth-child(9) + button,
+.KeyboardPage .keyboard button:nth-child(11) + button{
+    margin-top: -20px
+}

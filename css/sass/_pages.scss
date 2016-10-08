@@ -1,0 +1,30 @@
+//
+//
+//  PAGES STYLES
+//  author : JYG
+//
+//
+
+.Page{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.Page > header,
+.Page > article,
+.Page > footer{
+    display: table-row;
+}
+
+.Page > header,
+.Page > footer{
+    height: 50px;
+}
+
+.Page > article{
+    height: 100%;    
+    overflow-y: auto;
+    overflow-scrolling:touch;
+    -webkit-overflow-scrolling:touch;
+}

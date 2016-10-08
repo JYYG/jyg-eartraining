@@ -1,0 +1,36 @@
+//
+//
+//  TEST STYLE
+//  author : JYG
+//
+//
+
+
+.TestPage button{
+    display: inline-block;
+    width: 40%; 
+    margin-bottom: 10px;
+}
+
+.TestPage button[data-interval]{
+    opacity: 1;   
+}
+
+.TestPage section{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;    
+}
+
+.TestPage section p{
+    margin-bottom: 25px;
+    color: white;
+    font-size: 20px;
+}
+
+.TestPage section button{
+}
+
+.TestPage footer{
+    text-align: center;
+}

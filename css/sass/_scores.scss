@@ -1,0 +1,39 @@
+//
+//
+//  SCORES STYLE
+//  author : JYG
+//
+//
+
+.scoreList{
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.scoreList .scoreValue{
+    text-align: right;   
+}
+
+.scoreList .scoreItem{
+    display: inline-block;
+    padding: 0 25px;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background-color: white;    
+    color: black;
+    border-radius: 30px;
+}
+
+.scoreList .scoreItem:nth-child(even){
+    background-color: #E2E2E2;
+}
+
+.scoreList .noScore{
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    font-style: italic;
+}

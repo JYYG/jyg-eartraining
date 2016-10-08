@@ -1,0 +1,52 @@
+<div ng-controller="TestCtrl" class="TestPage Page">
+        
+    <header>        
+        <div class="col-3 f-l">
+            <a href="#/" ng-click="$root.animDir=true" class="f-l">Home</a>
+        </div>
+        <div class="col-9 f-r">
+            <div class="stepBar f-r">
+                <div class="progressBar step-{{step}}"></div>
+            </div>
+        </div>
+    </header>
+    
+    
+    <section>
+        <button ng-show="!showStart" ng-click="playTrainingInterval(); showStart=true; showReplay=true; showAnswer=true;">Start</button>
+        <button ng-show="showAnswer" ng-click="showNext=true" ng-disabled="showNext" ng-answer-unison data-interval="0">Unisson</button>
+        <button ng-show="showAnswer" ng-click="showNext=true" ng-disabled="showNext" ng-answer-second-minor data-interval="1">2m</button>
+        <button ng-show="showAnswer" ng-click="showNext=true" ng-disabled="showNext" ng-answer-second-major data-interval="2">2M</button>
+        <button ng-show="showAnswer" ng-click="showNext=true" ng-disabled="showNext" ng-answer-third-minor data-interval="3">3m</button>
+        <button ng-show="showAnswer" ng-click="showNext=true" ng-disabled="showNext" ng-answer-third-major data-interval="4">3M</button>
+        <button ng-show="showAnswer" ng-click="showNext=true" ng-disabled="showNext" ng-answer-fourth data-interval="5">4</button>
+        <button ng-show="showAnswer" ng-click="showNext=true" ng-disabled="showNext" ng-answer-triton data-interval="6">Triton</button>
+        <button ng-show="showAnswer" ng-click="showNext=true" ng-disabled="showNext" ng-answer-fifth data-interval="7">5</button>
+        <button ng-show="showAnswer" ng-click="showNext=true" ng-disabled="showNext" ng-answer-sixth-minor data-interval="8">6m</button>
+        <button ng-show="showAnswer" ng-click="showNext=true" ng-disabled="showNext" ng-answer-sixth-major data-interval="9">6M</button>
+        <button ng-show="showAnswer" ng-click="showNext=true" ng-disabled="showNext" ng-answer-seventh-minor data-interval="10">7m</button>
+        <button ng-show="showAnswer" ng-click="showNext=true" ng-disabled="showNext" ng-answer-seventh-major data-interval="11">7M</button>
+        <button ng-show="showAnswer" ng-click="showNext=true" ng-disabled="showNext" ng-answer-octave data-interval="12">Octave</button>
+        <button ng-show="showAnswer" ng-click="showNext=true" ng-disabled="showNext" ng-answer-ninth-minor data-interval="13">9m</button>
+        <button ng-show="showAnswer" ng-click="showNext=true" ng-disabled="showNext" ng-answer-ninth-major data-interval="14">9M</button>
+        <div class="clear"></div>
+        <button ng-show="showReplay" ng-click="playTrainingInterval(note1, note2);" ng-disabled="flagSound" class="btnReplay material-icons refresh"></button>
+    </section>
+    
+    
+    <footer>
+        <button ng-show="showNext && !showPopin" ng-disabled="!showNext" ng-click="playTraining();" class="animated" ng-class="{ bounceIn : showNext, bounceOut : !showNext }" ng-next-button>Next</button>
+    </footer>
+    
+    
+    <!-- POPIN -->
+    <div class="popin animated scorePopin" ng-model="popinOptions" ng-show="showPopin" ng-class="{ 'popinIn': showPopin, 'popinOut': !showPopin }">
+        <p>{{score}}/10</p>
+        <a href="#/" ng-click="$root.animDir=true" class="f-l">Back</a>
+        <button ng-show="step==11" ng-click="playTrainingInterval(Major,minor,direction); showStart=true; showReplay=true; showAnswer=true; step=1; score=0; showPopin=false;">Restart</button>
+    </div>
+
+    <div class="popinBg animated" ng-show="showPopin" ng-class="{ 'popinBgAnimIn': showPopin, 'popinBgAnimOut': !showPopin }"></div>
+    <!-- end POPIN -->
+    
+</div>

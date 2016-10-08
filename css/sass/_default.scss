@@ -1,0 +1,396 @@
+//
+//
+//  DEFAULT HTML ELEMENTS STYLE
+//  author : JYG
+//
+//          - H1, H2, H3, H4, H5, H6                               
+//          - HR                                                  
+//          - Grid                                                
+//          - Default classes 
+//
+//
+
+
+/**
+*
+*   GRID
+*   Set a grid to the project
+*
+*/    
+
+/* GRID GENERATOR */
+$colNumber : 12;
+$calc : 1 / $colNumber;
+
+@for $i from 1 through $colNumber{
+    .col-#{$i}{
+        width: percentage($calc * $i);   
+        max-width: percentage($calc * $i);   
+    }
+}
+
+
+
+/**
+*
+*   BLOCK ELEMENT
+*   - mrgBlock => Margin Block hide on phone devices
+*   - cntBlock => Content Block with padding
+*
+*/
+
+
+/* MARGIN BLOCKS */
+/* mrgBlock       */
+
+.mrgBlock{
+    float: left;
+    border: 1px solid white;
+//    background-color:lightgrey;
+    height:auto;
+}
+
+
+
+
+/* CONTENT BLOCKS */
+/* cntBlock       */
+
+.cntBlock{
+    float: left;
+    border: 1px solid white;
+//    background-color:green;
+//    min-height: 150px;
+    height:auto;
+}
+
+
+
+
+/* PADDING BLOCK ELEMENT GENERATOR */
+@for $i from 1 through $colNumber{
+    .mrgBlock.col-#{$i}{
+        /*padding-left: percentage(paddingCalc( ($calc * $i)*100,15));   
+        padding-right: percentage(paddingCalc( ($calc * $i)*100,15));   */
+        padding-left: 15px;   
+        padding-right: 15px;   
+        padding-top : 15px;
+        padding-bottom : 15px;
+    }
+    .cntBlock.col-#{$i}{
+        /*padding-left: percentage(paddingCalc( ($calc * $i)*100,15));   
+        padding-right: percentage(paddingCalc( ($calc * $i)*100,15));   */
+        padding-left: 15px;   
+        padding-right: 15px;   
+        padding-top : 15px;
+        padding-bottom : 15px;
+    }
+}
+
+
+
+/**
+*
+*   BECOME CLASSES
+*   Set width on blocks depending on the device
+*
+*/    
+    
+/* BECOME WIDTH ON PHONE LANDSCAPE */
+/* ex: become8onPhoneLand     */
+@media screen #{$phoneLand}{
+
+    @for $i from 1 through $colNumber{
+        .become#{$i}onPhoneLand{
+            width: percentage($calc * $i) !important;
+            max-width: percentage($calc * $i) !important;
+        }
+    }
+
+}
+
+/* BECOME WIDTH ON PHONE PORTRAIT */
+/* ex: become8onPhonePort     */
+@media screen #{$phonePort}{
+
+    @for $i from 1 through $colNumber{
+        .become#{$i}onPhonePort{
+            width: percentage($calc * $i) !important;
+            max-width: percentage($calc * $i) !important;
+        }
+    }
+
+}
+
+
+/* BECOME WIDTH ON PHONE PORTRAIT */
+/* ex: become8onPhonePort     */
+@media screen #{$tablet}{
+
+    @for $i from 1 through $colNumber{
+        .become#{$i}onTablet{
+            width: percentage($calc * $i) !important;
+            max-width: percentage($calc * $i) !important;
+        }
+    }
+
+}
+
+
+
+/**
+*
+*   LINE BLOCK ELEMENTS
+*   Add table and table-cell settings on blocks to set the same height on each elements
+*
+*/
+
+.blocksLine{
+    display: table;
+    overflow: hidden;
+}
+
+.blocksLine .mrgBlock,
+.blocksLine .cntBlock{
+    float:none;
+    display: table-cell;
+    height:100%;
+    vertical-align: middle;
+}
+
+    @media screen #{$phoneLand}{
+        .blocksLine .cntBlock{float:left;}
+    }
+
+
+
+
+/**
+*
+*   H1, H2, H3, H4, H5, H6
+*
+*/
+
+h1, h2{
+    color: white;
+}
+
+h1{
+    display: inline-block;
+    width: 100%; 
+    padding: 15px 25px;
+    border: 1px dashed white;
+    font-size: 50px;
+}
+
+h2{
+    padding: 25px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+/**
+*
+*   OK SELECT / KO SELECT
+*
+*/
+
+.okselect{
+    -webkit-touch-callout: all;
+    -webkit-user-select: all;
+    -khtml-user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
+} 
+
+.koselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+   
+
+
+/**
+*
+*   DEVICES SHOW / HIDE
+*
+*/
+
+.tabletShow                            {display:none !important;}
+.tabletHide                            {display:block !important;}
+
+.phoneLandShow                         {display:none !important;}
+.phoneLandHide                         {display:block !important;}
+
+.phonePortShow                         {display:none !important;}
+.phonePortHide                         {display:block !important;}
+    
+    @media screen #{$tabletMinMax}{
+        .tabletShow                    {display:block !important;}
+        .tabletHide                    {display:none !important;}
+        
+        .phoneLandShow                 {display:none !important;}
+        .phoneLandHide                 {display:block !important;}
+        
+        .phonePortShow                 {display:none !important;}
+        .phonePortHide                 {display:block !important;}
+    }
+
+    @media screen #{$phoneLandMinMax}{
+        .tabletShow                    {display:none !important;}
+        .tabletHide                    {display:block !important;}
+        
+        .phoneLandShow                 {display:block !important;}
+        .phoneLandHide                 {display:none !important;}
+        
+        .phonePortShow                 {display:none !important;}
+        .phonePortHide                 {display:block !important;}
+    }
+
+    @media screen #{$phonePortMinMax}{
+        .tabletShow                    {display:none !important;}
+        .tabletHide                    {display:block !important;}
+        
+        .phoneLandShow                 {display:none !important;}
+        .phoneLandHide                 {display:show !important;}
+        
+        .phonePortShow                 {display:block !important;}
+        .phonePortHide                 {display:none !important;}
+    }
+
+  
+  
+
+
+/**
+*
+*   TABLE
+*
+*/
+
+.disTable        {display: table !important;}
+.tableRow        {display: table-row;}
+.tableCell       {display: table-cell;}
+
+
+
+
+/**
+*
+*   DEFAULT CLASSES
+*
+*/
+
+/* SHADOW */
+.shadow					            {-webkit-box-shadow: 0 2.5px 7.5px 2.5px #CCC; box-shadow: 0 2.5px 7.5px 2.5px #CCC; }
+
+/* DEFAULT COLORS */
+.red					            {color:red;}
+.green					            {color:green;}
+
+
+/* CURSORS */
+.pointer                            {cursor: pointer;}
+
+
+/* DEFAULT CLASSES */
+.hide                       		{display:none;}
+.block                     			{display:block;}
+.flex                       		{display:flex}
+.inlineBlock                		{display:inline-block;}
+.inline                     		{display:inline;}
+
+.fixed                      		{position:fixed}
+
+.bottom                    			{bottom:0;}
+.left                       		{left:0}
+.right                      		{right:0;}
+
+.listStyleTypeNone					{list-style-type:none;}
+
+.noWrap                     		{white-space:nowrap;}
+.preWrap                    		{white-space:pre-wrap;}
+
+.vAlignTop                  		{vertical-align:top;}
+.vAlignMiddle               		{vertical-align:middle;}
+
+.flex-end                   		{justify-content: flex-end;}
+
+.center                     		{text-align:center; margin:0 auto;}
+.txtLeft                    		{text-align:left;}
+.txtRight                   		{text-align:right !important}
+.italic                     		{font-style:italic;}
+.bold                       		{font-weight:bold;}
+
+.uppercase                          {text-transform: uppercase;}
+
+.f-l                        		{float: left !important;}
+.f-r                        		{float: right !important;}
+.f-n								{float: none !important;}
+
+.clear                      		{clear: both;}
+.clearNone                  		{clear: none !important;}
+
+.positionAbsolute           		{position:absolute;}
+.positionRelative           		{position:relative;}
+
+.overflowHidden             		{overflow:hidden;}
+
+.fontsize11                 		{font-size:em(11); /* 11px */}
+.fontsize12                 		{font-size:em(12); /* 12px */}
+.fontsize14                 		{font-size:em(14); /* 14px */}
+
+
+.noDecoration               		{ text-decoration: none; }
+.noDecoration:hover          		{ text-decoration: none; }
+
+.lineHeight11               		{line-height:11px;}
+.lineHeight15               		{line-height:15px !important;}
+.lineHeight28               		{line-height:28px;}
+.lineHeight50               		{line-height:50px;}
+
+.noBorder							{border:none;}
+.noBorderLeft               		{border-left:none !important;}
+.borderGrey							{border:1px solid #CCC;}
+.borderTopDashed            		{border-top:1px dashed #CCC}
+.borderBottomDashed         		{border-bottom:1px dashed #CCC}
+.borderLeftDashed           		{border-left:1px dashed #CCC}
+
+.noBgImg                            {background-image:none !important;}
+.bgNoRepeat                 		{background-repeat: no-repeat !important;}
+.bgTransparent						{background-color:transparent !important;}
+.bg-white                   		{background-color:white;}
+
+.full-width                 		{width:100%;}
+
+.opacity25,
+.inactive                   		{opacity:.25;}
+.opacity50                 			{opacity:.5;}
+
+.widthAuto                  		{width:auto !important;}
+.width25                    		{width:25%}
+.width49                    		{width:49% !important;}
+.width50                    		{width:50% !important;}
+.width100                   		{width:100% !important;}
+ 
+.height70                   		{height:70px}
+.height75                   		{height:75px}
+
+.minHeight25						{min-height:25px;}
+.minHeight50						{min-height:50px;}
+
+.noMargin                   		{margin:0 !important}
+.marginAuto                         {margin-left:auto; margin-right:auto;}
+	
+.noPadding                  		{padding:0 !important}
+
+.circle20                   		{border-radius:20px; width:20px; height:20px;}
+.circle40                   		{border-radius:40px; width:40px; height:40px;}
+
+
+/* ============================================================================= */

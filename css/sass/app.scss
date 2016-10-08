@@ -1,0 +1,147 @@
+//
+//
+//  APP MAIN STYLES SETTINGS
+//  author : JYG
+//
+//
+
+/* ====================== */
+/*      DEVICES WIDTH     */
+/* ====================== */
+$HDcomputer         : "and (max-width:1920px) ";
+$xxcomputer         : "and (max-width:1400px) ";
+$xcomputer          : "and (max-width:1220px) ";
+$computer           : "and (max-width:1120px) ";
+$tablet             : "and (max-width:980px) ";
+$phoneLand          : "and (max-width:736px) "; 
+$phonePort          : "and (max-width:470px) ";
+$xphonePort         : "and (max-width:320px) ";
+
+/* Min */
+$minComputer        : "and (min-width:1120px) ";
+$minTablet          : "and (min-width:980px) ";
+
+/* Min / Max */
+$tabletMinMax       : "and (min-width:737px) and (max-width:980px) ";
+$phoneLandMinMax    : "and (min-width:471px) and (max-width:736px) ";
+$phonePortMinMax    : "and (min-width:320px) and (max-width:470px) ";
+
+
+/* ====================== */
+/*      DEVICES HEIGHT    */
+/* ====================== */
+$maxH750            : "and (max-height:750px) ";
+
+
+
+
+/* ====================== */
+/*         COLORS         */
+/* ====================== */
+
+// DEFAULT COLOR
+$default-color: #00AAFF;   .txtDefault   {color: $default-color}
+
+// PRIMARY ACCOMPANIENT COLORS
+$mGreen: #69AF23;          .txtmGreen    {color: $mGreen}
+$dGreen: #008737;          .txtdGreen    {color: $dGreen}
+$lGreen: #BECD00;          .txtlGreen    {color: $lGreen}
+
+$mBlue: #005FAA;           .txtmBlue     {color: $mBlue}
+$mYellow: #FFC300;         .txtmYellow   {color: $mYellow}
+$mRed: #E10019;            .txtmRed      {color: $mRed}
+$mPurple: #7a2666;         .txtmPurple   {color: $mPurple}
+$mPink: #E62D87;           .txtmPink     {color: $mPink}
+
+// SECONDARY ACCOMPANIENT COLORS
+$mPetrol: #37B9C3;         .txtmPetrol   {color: $mPetrol}
+$dPetrol: #005A7B;         .txtdPetrol   {color: $dPetrol}
+
+$mOrange: #F07D00;         .txtmOrange   {color: $mOrange}
+$dOrange: #D74B14;         .txtdOrange   {color: $dOrange}
+
+
+// GREY
+$lightGrey: #F2F2F2;       .txtlightGrey {color: $lightGrey}
+$midGrey: #777;            .txtmidGrey   {color: $midGrey}
+$darkGrey: #444;           .txtdarkGrey  {color: $darkGrey}
+
+
+
+
+/* ====================== */
+/*          FONTS         */
+/* ====================== */
+
+body{
+    font-family: Lobster, sans-serif;
+}
+
+@font-face {
+    font-family: Lobster;
+    src: url('fonts/Lobster-Regular.ttf');
+}
+
+
+/* ====================== */
+/*        FUNCTIONS       */
+/* ====================== */
+
+
+/**
+*
+*   PADDING CALCUL WITH ELEMENT WIDTH
+*   Use it with percentage()
+*
+*/
+
+@function paddingCalc($width, $padding){
+  $i : ( ($width * $padding) / 10000 );
+  @return $i;
+}
+
+
+
+/* ====================== */
+/*    DEFAULT SETTINGS    */
+/* ====================== */
+
+// BACKGROUND SETTINGS
+@mixin bgSettings($color:'initial',$image:'none',$repeat:'initial',$position:'initial',$size:'default') {
+    background-color:$color;
+    @if($image != 'none'){ background-image:url($image) }else{ background-image:$image };
+    background-repeat:$repeat;
+    background-position:$position;
+    background-size:$size;
+}
+
+// BACKGROUND SETTINGS
+@mixin border-radius($leftTop: '',$rightTop: '',$rightBottom: '',$leftBottom: '') {
+    border-radius: $leftTop $rightTop $rightBottom $leftBottom;
+    -webkit-border-radius: $leftTop $rightTop $rightBottom $leftBottom;
+    -moz-border-radius: $leftTop $rightTop $rightBottom $leftBottom;
+    -ms-border-radius: $leftTop $rightTop $rightBottom $leftBottom;
+    -o-border-radius: $leftTop $rightTop $rightBottom $leftBottom;
+}
+
+
+/* ====================== */
+/*         IMPORT         */
+/* ====================== */
+
+@import 'reset';
+@import 'default';
+@import 'icons';
+@import 'animate';
+@import 'global';
+@import 'buttons';
+@import 'elements';
+@import 'popin';
+@import 'pages';
+@import 'home';
+@import 'training-menu';
+@import 'training';
+@import 'test';
+@import 'scores';
+@import 'keyboard';
+@import 'metronome';

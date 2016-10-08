@@ -1,0 +1,65 @@
+//
+//
+//  BUTTONS STYLES
+//  author : JYG
+//
+//
+
+
+button,
+button:active,
+button:hover{
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 18px;
+    background-color: white;
+    /* Tapped state */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent; /* For some Androids */
+    /* */
+    border-radius: 30px;
+    border: none;
+    color: black;
+    cursor: pointer;
+}
+
+button[disabled]{
+    opacity: .5;   
+}
+
+button.ok{
+    background-color: green;
+    color: white;
+} 
+
+button.ko{
+    background-color: red;
+    color: white;
+}
+
+
+
+a:link,
+a:visited,
+a:active{
+    color: white;
+}
+
+
+
+button.btnReplay{
+    display: block;
+    margin: 25px auto;
+    background-color: transparent;
+    width: auto;
+    color: white;
+}
+
+button.btnReplay[disabled]{
+    opacity: .15;
+}

@@ -1,0 +1,8 @@
+<!doctype HTML><html ng-app=IET ng-controller=MainCtrl><head><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=0"><meta name=format-detection content="telephone=no"><meta http-equiv=Content-Security-Policy content="default-src 'self' data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *"><title>Interval Ear Training</title><link rel=stylesheet type=text/css href=css/app.min.css><style>
+            .ng-leave,
+            .ng-enter{animation-duration: .3s}
+            .ng-enter.left{animation-name:  slideInLeft}
+            .ng-enter.right{animation-name: slideInRight}
+            .ng-leave.left{animation-name: slideOutRight}
+            .ng-leave.right{animation-name:  slideOutLeft}
+        </style></head><body><section class="MainView animated" ng-class="{ 'left' : $root.animDir, 'right' : !$root.animDir }" ng-view></section><routeloadingindicator></routeloadingindicator><script src=libs/libs.min.js></script><script src=cordova.js></script><script src=app/app.min.js></script><script src=app/store/notes.js></script><script src=app/store/frequencies.js></script></body></html>

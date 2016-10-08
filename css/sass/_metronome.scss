@@ -1,0 +1,51 @@
+//
+//
+//  METRONOME STYLE
+//  author : JYG
+//
+//
+
+
+.MetronomePage ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+}
+
+.MetronomePage .tempoValue{
+    display: block;
+    margin: 0 auto;
+    padding-left: 25px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: left;
+    font-size: 30px;
+    color: white;
+    border: 1px dashed white;
+    background-image:url(../images/icons/ico-noir.png);
+    background-size: auto 25%;
+    background-repeat: no-repeat;
+    background-position: 75% center;
+}
+
+.MetronomePage .tempoRange{
+    margin: 50px 0;   
+}
+
+.MetronomePage footer{
+    text-align: center;
+}
+
+.MetronomePage footer button{
+    display: inline-block;
+    margin: 0 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 12px;
+}

@@ -1,0 +1,39 @@
+//
+//
+//  GLOBAL STYLES
+//  author : JYG
+//
+//
+
+
+body{
+    background-image: url(../images/backgrounds/bg-body.png);
+    background-repeat: repeat-x;
+    background-size: auto 200%;
+    background-position: top center;
+}
+
+
+
+/**
+*
+* MAINVIEW
+*
+*/
+
+.MainView{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    padding: 25px 10px;    
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
+.MainView:first-child{left: 0;}
+
+@media screen #{$phoneLand}{
+    .MainView{width: 100%; height: 100%;}
+}
